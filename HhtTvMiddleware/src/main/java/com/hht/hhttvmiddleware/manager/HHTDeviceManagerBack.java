@@ -14,13 +14,12 @@ import com.hht.hhttvmiddleware.factory.MstarDeviceFactory;
  * @TODO: 设备管理类
  */
 
-public enum HHTDeviceManager {
-    INSTANCE;//Enum单例
+public class HHTDeviceManagerBack {
     private IFactory iFactory = null;
     private HHTDevice hhtDevice = null;
-    public Context context;
+    private Context context;
 //    private static HHTDeviceManager instance = null;
-//    private HHTDeviceManager(){}
+    private HHTDeviceManagerBack(){}
 //    public static synchronized HHTDeviceManager getInstance(){
 //        if (instance == null){
 //            synchronized (HHTDeviceManager.class){
@@ -33,20 +32,20 @@ public enum HHTDeviceManager {
 //    }
 
     //静态内部类单例
-//    private static class SingletonHolder{
-//        private final static HHTDeviceManager INSTANCE = new HHTDeviceManager();
-//    }
-//
-//    public static HHTDeviceManager getInstance(){
-//        return SingletonHolder.INSTANCE;
-//    }
+    private static class SingletonHolder{
+        private final static HHTDeviceManagerBack INSTANCE = new HHTDeviceManagerBack();
+    }
+
+    public static HHTDeviceManagerBack getInstance(){
+        return SingletonHolder.INSTANCE;
+    }
 
     /**
      * 初始化参数
      * @param context
      * @return
      */
-    public HHTDeviceManager init(Context context){
+    public HHTDeviceManagerBack init(Context context){
         this.context = context;
         String deviceType = getDeviceType();
         if (deviceType.equals("mstar")){

@@ -55,24 +55,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_eye_1:
-                HHTDeviceManager.getInstance().isEyemodeEnable();
+//                HHTDeviceManager.getInstance().isEyemodeEnable();
+                HHTDeviceManager.INSTANCE.isEyemodeEnable();
                 break;
             case R.id.btn_eye_2:
-                HHTDeviceManager.getInstance().setEyemodeEnable(eyeModeEnable);
+//                HHTDeviceManager.getInstance().setEyemodeEnable(eyeModeEnable);
+                HHTDeviceManager.INSTANCE.setEyemodeEnable(eyeModeEnable);
                 eyeModeEnable = !eyeModeEnable;
                 break;
             case R.id.btn_wb_1:
-                HHTDeviceManager.getInstance().isWbWriteProtectEnable();
+//                HHTDeviceManager.getInstance().isWbWriteProtectEnable();
+                HHTDeviceManager.INSTANCE.isWbWriteProtectEnable();
                 break;
             case R.id.btn_wb_2:
-                HHTDeviceManager.getInstance().setWbWriteProtectEnable(wbWriteProjectEnable);
+//                HHTDeviceManager.getInstance().setWbWriteProtectEnable(wbWriteProjectEnable);
+                HHTDeviceManager.INSTANCE.setWbWriteProtectEnable(wbWriteProjectEnable);
                 wbWriteProjectEnable = !wbWriteProjectEnable;
                 break;
             case R.id.btn_blight_1:
-                HHTDeviceManager.getInstance().isBlightControlEnable();
+//                HHTDeviceManager.getInstance().isBlightControlEnable();
+                HHTDeviceManager.INSTANCE.isBlightControlEnable();
                 break;
             case R.id.btn_blight_2:
-                HHTDeviceManager.getInstance().setBlightControlEnable(blightControlEnable);
+//                HHTDeviceManager.getInstance().setBlightControlEnable(blightControlEnable);
+                HHTDeviceManager.INSTANCE.setBlightControlEnable(blightControlEnable);
                 blightControlEnable = !blightControlEnable;
                 break;
         }
@@ -99,7 +105,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         eyeModeEnable = true;
         wbWriteProjectEnable = true;
         blightControlEnable = true;
-        HHTDeviceManager.getInstance().setDeviceType(type);
-        HHTDeviceManager.getInstance().init(getApplicationContext());
+//        HHTDeviceManager.getInstance().setDeviceType(type);
+//        HHTDeviceManager.getInstance().init(getApplicationContext());
+        HHTDeviceManager.INSTANCE.setDeviceType(type);
+        HHTDeviceManager.INSTANCE.init(getApplicationContext());
     }
 }

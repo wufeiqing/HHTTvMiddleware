@@ -16,6 +16,7 @@ public class HhtApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        HHTDeviceManager.getInstance().init(getApplicationContext());
+//        HHTDeviceManager.getInstance().init(getApplicationContext());
+        HHTDeviceManager.INSTANCE.init(getApplicationContext());
     }
 }
