@@ -18,17 +18,26 @@ public class HHTDeviceManager {
     private IFactory iFactory = null;
     private HHTDevice hhtDevice = null;
     private Context context;
-    private static HHTDeviceManager instance = null;
+//    private static HHTDeviceManager instance = null;
     private HHTDeviceManager(){}
-    public static synchronized HHTDeviceManager getInstance(){
-        if (instance == null){
-            synchronized (HHTDeviceManager.class){
-                if (instance == null){
-                    instance = new HHTDeviceManager();
-                }
-            }
-        }
-        return instance;
+//    public static synchronized HHTDeviceManager getInstance(){
+//        if (instance == null){
+//            synchronized (HHTDeviceManager.class){
+//                if (instance == null){
+//                    instance = new HHTDeviceManager();
+//                }
+//            }
+//        }
+//        return instance;
+//    }
+
+    //静态内部类单例
+    private static class SingletonHolder{
+        private final static HHTDeviceManager INSTANCE = new HHTDeviceManager();
+    }
+
+    public static HHTDeviceManager getInstance(){
+        return SingletonHolder.INSTANCE;
     }
 
     /**
